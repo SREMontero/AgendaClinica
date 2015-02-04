@@ -1,0 +1,10 @@
+c:\users\montero\documents\visual studio 2013\Projects\AgendaClinica\AgendaClinica\bin\Debug\AgendaClinica.exe.config
+C:\Users\MONTERO\documents\visual studio 2013\Projects\AgendaClinica\AgendaClinica\bin\Debug\AgendaClinica.exe
+C:\Users\MONTERO\documents\visual studio 2013\Projects\AgendaClinica\AgendaClinica\bin\Debug\AgendaClinica.pdb
+C:\Users\MONTERO\documents\visual studio 2013\Projects\AgendaClinica\AgendaClinica\obj\Debug\AgendaClinica.csprojResolveAssemblyReference.cache
+C:\Users\MONTERO\documents\visual studio 2013\Projects\AgendaClinica\AgendaClinica\obj\Debug\AgendaClinica.Properties.Resources.resources
+C:\Users\MONTERO\documents\visual studio 2013\Projects\AgendaClinica\AgendaClinica\obj\Debug\AgendaClinica.csproj.GenerateResource.Cache
+C:\Users\MONTERO\documents\visual studio 2013\Projects\AgendaClinica\AgendaClinica\obj\Debug\AgendaClinica.exe
+C:\Users\MONTERO\documents\visual studio 2013\Projects\AgendaClinica\AgendaClinica\obj\Debug\AgendaClinica.pdb
+C:\Users\MONTERO\documents\visual studio 2013\Projects\AgendaClinica\AgendaClinica\obj\Debug\AgendaClinica.frmDetalleAgenda.resources
+C:\Users\MONTERO\documents\visual studio 2013\Projects\AgendaClinica\AgendaClinica\obj\Debug\AgendaClinica.frmAgenda.resources
