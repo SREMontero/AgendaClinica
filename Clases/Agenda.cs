@@ -11,6 +11,7 @@ namespace AgendaClinica
         /*Propiedades para cada campo */
         public Int64    IdAgenda    { get; set; }
         public DateTime FechaHora   { get; set; }
+        public DateTime FechaFin    { get; set; }
         public int      Paciente    { get; set; }
         public string   Nombre      { get; set; }
         public string   Observa     { get; set; }
@@ -24,6 +25,7 @@ namespace AgendaClinica
 
         public Agenda(  Int64 pIdAgenda, 
                         DateTime pFechaHora,            
+                        DateTime pFechaFin,
                         int pPaciente,
                         string pNombre,
                         string pObserva,
@@ -32,6 +34,7 @@ namespace AgendaClinica
         {
             this.IdAgenda = pIdAgenda;
             this.FechaHora = pFechaHora;
+            this.FechaFin = pFechaFin;
             this.Paciente = pPaciente;
             this.Nombre = pNombre;
             this.Observa = pObserva;

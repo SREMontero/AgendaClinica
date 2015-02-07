@@ -12,6 +12,9 @@ namespace AgendaClinica
 {
     public partial class frmAgenda : Form
     {
+
+        public Agenda AgendaSeleccionada { get; set; }
+        
         public frmAgenda()
         {
             InitializeComponent();
@@ -20,9 +23,9 @@ namespace AgendaClinica
         private void Agenda_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'agendaClinicaDataSet1.Agenda' table. You can move, or remove it, as needed.
-            this.agendaTableAdapter.Fill(this.agendaClinicaDataSet1.Agenda);
+            //this.agendaTableAdapter.Fill(this.agendaClinicaDataSet1.Agenda);
             // TODO: This line of code loads data into the 'agendaClinicaDataSet.Agenda' table. You can move, or remove it, as needed.
-            this.agendaTableAdapter.Fill(this.agendaClinicaDataSet.Agenda);
+            //this.agendaTableAdapter.Fill(this.agendaClinicaDataSet.Agenda);
 
         }
 
@@ -41,6 +44,30 @@ namespace AgendaClinica
         {
             Int64 idAgenda = (Int64)dgvAgenda.Rows[e.RowIndex].Cells[0].Value;
             VerDetalle(idAgenda);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            dgvAgenda.DataSource = AgendaDAL.BuscarAgenda(dtpFecha.Value);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            VerDetalle(-1);
+        }
+
+        private void frmAgenda_Shown(object sender, EventArgs e)
+        {
+            dgvAgenda.Columns[1].DefaultCellStyle.Format = "dd/MM/yyyy hh:mm";
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dgvAgenda.SelectedRows.Count == 1) 
+            {
+                Int64 Id = Convert.ToInt64(dgvAgenda.CurrentRow.Cells[0].Value);
+                
+            }
         }
     }
 }
