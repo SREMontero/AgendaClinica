@@ -122,10 +122,9 @@
             // 
             this.cbHora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbHora.FormattingEnabled = true;
-            this.cbHora.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cbHora.Items.AddRange(new object[] {
-            "8:00",
-            "9:00",
+            "08:00",
+            "09:00",
             "10:00",
             "11:00",
             "12:00",

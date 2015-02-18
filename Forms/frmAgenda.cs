@@ -36,7 +36,17 @@ namespace AgendaClinica
 
         private void VerDetalle(Int64 idAgenda)
         {
-            (new frmDetalleAgenda(idAgenda)).Show();
+            if (idAgenda == -1)
+            { 
+                (new frmDetalleAgenda(idAgenda,0)).Show();
+            } else
+            {
+                (new frmDetalleAgenda(idAgenda, 1)).Show();
+            }
+            if (idAgenda == -2)
+            {
+                (new frmDetalleAgenda(idAgenda, 2)).Show();
+            }
 
         }
 

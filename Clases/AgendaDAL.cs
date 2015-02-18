@@ -16,21 +16,29 @@ namespace AgendaClinica
             {
                 /* string timeStamp = DateTextBox.Text + " " + TimeTextBox.Text;
                     var requestTimeStamp = Convert.ToDateTime(timeStamp).ToString("yyyy-MM-dd H:mm:ss"); */
-
-                
-                SqlCommand Comando = new SqlCommand(string.Format("Insert into Agenda "+
+                string Consulta = string.Format("Insert into Agenda " +
                                         "(FECHAHORA, FECHAFIN, PACIENTE, NOMBRE, OBSERVACIONES, FECHAORIG, MOTIVO) values " +
                                         "('{0}','{1}',{2},'{3}','{4}','{5}','{6}')",
-                                        pAgenda.FechaHora.ToString("yyyy-MM-dd H:mm:ss"),
-                                        pAgenda.FechaFin.ToString("yyyy-MM-dd H:mm:ss"),
+                                        pAgenda.FechaHora.ToString("yyyy-dd-MM H:mm:ss"),
+                                        pAgenda.FechaFin.ToString("yyyy-dd-MM H:mm:ss"),
                                         pAgenda.Paciente.ToString(),
                                         pAgenda.Nombre,
                                         pAgenda.Observa,
                                         pAgenda.FechaOrig.ToString("yyyy-MM-dd H:mm:ss"),
-                                        pAgenda.Motivo),Conn); 
+                                        pAgenda.Motivo);
+                
+                SqlCommand Comando = new SqlCommand(Consulta,Conn); 
 
                 retorno = Comando.ExecuteNonQuery();
             }
+            return retorno;
+        }
+
+        public static int Editar(Agenda pAgenda)
+        {
+            int retorno = 0;
+
+
             return retorno;
         }
 
@@ -49,8 +57,8 @@ namespace AgendaClinica
                 SqlCommand comando = new SqlCommand(string.Format(
                     "SELECT IDAGENDA, FECHAHORA, FECHAFIN, PACIENTE, NOMBRE, OBSERVACIONES,FECHAORIG, MOTIVO FROM " +
                     "AGENDA WHERE FECHAHORA BETWEEN '{0}' AND '{1}'",
-                    lcFechaInicio.ToString("yyyy-MM-dd H:mm:ss"),
-                    lcFechaFin.ToString("yyyy-MM-dd H:mm:ss")),conexion);
+                    lcFechaInicio.ToString("yyyy-dd-MM H:mm:ss"),
+                    lcFechaFin.ToString("yyyy-dd-MM H:mm:ss")),conexion);
 
                 SqlDataReader reader = comando.ExecuteReader();
 
@@ -83,7 +91,7 @@ namespace AgendaClinica
                 SqlCommand comando = new SqlCommand(string.Format(
                     "SELECT IDAGENDA, FECHAHORA, FECHAFIN, PACIENTE, NOMBRE, OBSERVACIONES,FECHAORIG, MOTIVO FROM " +
                     "AGENDA WHERE IDAGENDA ={0}",
-                    pIDAgenda.ToString), conexion);
+                    pIDAgenda.ToString()), conexion);
 
                 SqlDataReader reader = comando.ExecuteReader();
 
@@ -100,7 +108,7 @@ namespace AgendaClinica
                 }
 
                 conexion.Close();
-                return Lista;
+                return pAgenda;
             }
         }
 

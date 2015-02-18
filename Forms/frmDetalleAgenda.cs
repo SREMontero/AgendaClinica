@@ -12,12 +12,14 @@ namespace AgendaClinica
 {
     public partial class frmDetalleAgenda : Form
     {
-        public int Modo { get; set; } //Edicion 1 //Eliminación 2 //Alta 0
+        public int Modo { get; set; } //Alta 0 //Edicion 1 //Eliminación 2 
         public Agenda AgendaSeleccionada { get; set; }
 
         public frmDetalleAgenda(long idAgenda, int pModo)
         {
             InitializeComponent();
+
+            int indiceHora;
 
             Modo = pModo; 
 
@@ -28,7 +30,21 @@ namespace AgendaClinica
                 tbNombre.Text = AgendaSeleccionada.Nombre;
                 tbObserva.Text = AgendaSeleccionada.Observa;
                 dtpFechaHora.Value = AgendaSeleccionada.FechaHora;
-                cbHora.Text = AgendaSeleccionada.FechaHora.Hour.ToString;
+
+                indiceHora = 0;
+
+                //cbHora.SelectedText = AgendaSeleccionada.FechaHora.ToString("HH:mm");
+
+                //Cargamos la hora en el combo.
+                for (indiceHora = 0; indiceHora <= (cbHora.Items.Count - 1); indiceHora++)
+                {
+                    cbHora.SelectedIndex = indiceHora;
+                    if (AgendaSeleccionada.FechaHora.ToString("HH:mm")== cbHora.Text) 
+                    {
+                        break;
+                    }
+                    cbHora.SelectedIndex = 0;
+                }
 
             } 
             else        
